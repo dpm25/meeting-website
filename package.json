@@ -1,0 +1,27 @@
+{
+  "name": "meeting",
+  "version": "1.0.0",
+  "description": "This is a meeting website that allows users to find meetings in area 71",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpm25/meeting-website.git"
+  },
+  "author": "dmahoney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpm25/meeting-website/issues"
+  },
+  "homepage": "https://github.com/dpm25/meeting-website#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-session": "^1.14.1",
+    "mongodb": "^2.2.11"
+  }
+}
