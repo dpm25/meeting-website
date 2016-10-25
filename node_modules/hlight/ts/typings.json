@@ -1,0 +1,7 @@
+{
+  "ambientDependencies": {
+    "browserify": "github:DefinitelyTyped/DefinitelyTyped/browserify/browserify.d.ts",
+    "mocha": "github:Bartvds/tsd-deftools/typings/DefinitelyTyped/mocha/mocha.d.ts",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts"
+  }
+}

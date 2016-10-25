@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for gulp-inspect/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">gulp-inspect/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.45% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>5/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.62% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/21</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">#!/usr/bin/env node
+&nbsp;
+/// &lt;reference path="typings/tsd.d.ts" /&gt;
+var plugins = {
+    path: require("path"),
+    beautylog: require("beautylog"),
+    indentString: require("indent-string"),
+    g: {
+        wavethrough: require("gulp-wavethrough")
+    },
+    through: require("through2")
+};
+var doNothing = <span class="fstat-no" title="function not covered" >function () {</span>
+};
+module.exports = function (activateArg) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (activateArg === void 0) { <span class="cstat-no" title="statement not covered" >activateArg = true; </span>}
+    if (activateArg == true) {
+        return plugins.through.obj(<span class="fstat-no" title="function not covered" >function (file, enc, cb) {</span>
+            //do some string calculating
+<span class="cstat-no" title="statement not covered" >            var localFile = {</span>
+                contents: String(file.contents)
+            };
+<span class="cstat-no" title="statement not covered" >            localFile.contents = plugins.indentString(localFile.contents, ' ', 2);</span>
+<span class="cstat-no" title="statement not covered" >            localFile.contents = plugins.indentString(localFile.contents, '&gt;'.red, 2);</span>
+<span class="cstat-no" title="statement not covered" >            localFile.contents = '\n'.concat(localFile.contents);</span>
+            //form console output
+<span class="cstat-no" title="statement not covered" >            plugins.beautylog.info("file in your pipeline:");</span>
+<span class="cstat-no" title="statement not covered" >            console.log("|| ".blue + "File.contents: ".yellow + localFile.contents.bold);</span>
+<span class="cstat-no" title="statement not covered" >            console.log("|| ".blue + "File.path: ".yellow + String(file.path).bold.blue);</span>
+<span class="cstat-no" title="statement not covered" >            console.log("|| ".blue + "File.base: ".yellow + String(file.base).bold.blue);</span>
+<span class="cstat-no" title="statement not covered" >            console.log("|| ".blue + "File.relative: ".yellow + String(file.relative).bold.blue);</span>
+<span class="cstat-no" title="statement not covered" >            console.log("|| ".blue + "File.data: ".yellow + String(JSON.stringify(file.data)).bold.blue);</span>
+<span class="cstat-no" title="statement not covered" >            return cb(null, file); </span>//run callback function to signal end of plugin process.
+        });
+    }
+    else if (activateArg == false) {
+        return plugins.g.wavethrough(); //wave through
+    }
+    else {
+        plugins.beautylog.error("gulp-inspect: please provide a valid boolean value as argument");
+        return plugins.g.wavethrough(); //wave through
+    }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Feb 09 2016 21:00:11 GMT+0100 (CET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
