@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var jsFiles = ['*.js', 'src/**/*.js'];
 var nodemon = require('gulp-nodemon');
 
 gulp.task('serve', function() {
