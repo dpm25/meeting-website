@@ -1,0 +1,12 @@
+<!--  Meeting Search -->
+<div id="meeting-results" class="meeting-results">
+    <% for (var i=0; i < meeting.length; i++) {%>
+        <div class="row buffer ">
+            <h4><b><%=meeting[i].name%></b></h4>
+            <h5><%=meeting[i].address%></h5>
+            <h5><%=meeting[i].city%>, <%=meeting[i].state%> <%=meeting[i].zip%></h5>
+            <h5>Day: <%=meeting[i].dayOfWeek%></h5>
+            <h5>Smoking: <%=meeting[i].smoking%></h5>
+        </div>
+        <%}%>
+</div>

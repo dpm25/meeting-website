@@ -1,0 +1,8 @@
+div.meeting-results>div:nth-of-type(odd) {
+    background: #2275f9;
+}
+
+.buffer {
+    padding-top: 5px;
+    padding-left: 10px;
+}
