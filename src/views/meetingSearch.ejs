@@ -48,50 +48,109 @@
         <h1>Meeting Search</h1>
     </div>
     <div class="container">
-        <div class="row">
-
-            <nav class="navbar navbar-default">
-                <div class="nav nav-justified navbar-nav">
-
-                    <form class="navbar-form navbar-search" role="search">
-                        <div class="input-group">
-
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-search btn-default dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-search"></span>
-                            <span class="label-icon">Search</span>
-                            <span class="caret"></span>
-                        </button>
-                                <ul class="dropdown-menu pull-left" role="menu">
-                                    <li>
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-user"></span>
-                                            <span class="label-icon">Search By Day</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="glyphicon glyphicon-book"></span>
-                                            <span class="label-icon">Search By Title</span>
-                                        </a>
-                                    </li>
-                                </ul>
+        <div class="panel panel-default">
+            <div class="panel-heading">Panel heading without title</div>
+            <div class="panel-body">
+                <form method="POST" action="/MeetingSearch/search">
+                    <!--  Meeting Name search box-->
+                    <div class="form-group row">
+                        <label for="meetingName" class="col-xs-2 col-sm-2 col-form-label">Meeting Name: </label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" placeholder=" Title of the meeting" id="meetingName">
+                        </div>
+                    </div>
+                    <!-- Time of meeting -->
+                    <div class="form-group row">
+                        <label for="time" class="col-xs-2 col-sm-2 col-form-label">Time: </label>
+                        <div class="btn-group" style="float:left">
+                            <button id="hour-btn" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><b>Hours</b><span id="selected" class="caret"></span></button>
+                            <ul id="hour-dropdown" class="dropdown-menu" style="min-width:20px">
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><a href="#">7</a></li>
+                                <li><a href="#">8</a></li>
+                                <li><a href="#">9</a></li>
+                                <li><a href="#">10</a></li>
+                                <li><a href="#">11</a></li>
+                                <li><a href="#">12</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" style="float:left">&nbsp;&nbsp;:&nbsp;&nbsp;</div>
+                        <div id="min-dropdown" class="btn-group" style="float:left">
+                            <button id="min-btn" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><b>Minutes</b><span class="caret"></span></button>
+                            <ul class="dropdown-menu" style="min-width:20px">
+                                <li><a href="#">00</a></li>
+                                <li><a href="#">15</a></li>
+                                <li><a href="#">30</a></li>
+                                <li><a href="#">45</a></li>
+                            </ul>
+                        </div>
+                        <div class="btn-group" style="float:left">&nbsp;&nbsp;</div>
+                        <div id="period-dropdown" class="btn-group" style="float:left">
+                            <button id="period-btn" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><b>Period</b><span class="caret"></span></button>
+                            <ul class="dropdown-menu" style="min-width:20px">
+                                <li><a href="#">AM</a></li>
+                                <li><a href="#">PM</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Radio buttons -->
+                    <div id="dayPicker" class="row">
+                        <label for="dayPicker" class="col-sm-2 col-form-label">Day: </label>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input class="form-check-input" name="day" type="checkbox" id="monday" value="monday">
+                                Monday
+                              </label>
                             </div>
-
-                            <input type="text" class="form-control">
-
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-search btn-default">
-                        GO
-                        </button>
-
-
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input class="form-check-input" name="day" type="checkbox" id="tuesday" value="tuesday">
+                                Tuesday
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input class="form-check-input" name="day" type="checkbox" id="wednesday" value="wednesday">
+                                Wednesday
+                            </label>
                             </div>
                         </div>
-                    </form>
-
-                </div>
-            </nav>
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input class="form-check-input" name="day" type="checkbox" id="thursday" value="thursday">
+                                Thursday
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input class="form-check-input" name="day" type="checkbox" id="friday" value="friday">
+                                Friday
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input class="form-check-input" name="day" type="checkbox" id="saturday" value="saturday">
+                                Saturday
+                            </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                <input class="form-check-input" name="day" type="checkbox" id="sunday" value="sunday">
+                                Sunday
+                            </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="meeting-form" type="button" class="btn btn-secondary btn-md">Search</button>
+                </form>
+            </div>
         </div>
     </div>
     <!-- script references -->

@@ -10,6 +10,16 @@ var router = function(nav) {
                 nav: nav
             });
         });
+
+    meetingSearchRouter.route('/search')
+        .post(function(req, res) {
+            var day = req.body.day;
+            console.log(day);
+            // var url = 'mongodb://localhost:27017/meetings'
+            // mongodb.connect(url, function(err, db) {
+            //
+            // });
+        });
     return meetingSearchRouter;
 };
 
