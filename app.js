@@ -54,7 +54,7 @@ app.get('/', function(req, res) {
 app.get('/getDayOfWeek', function(req, res) {
     var day = req.query.data;
     console.log('data: ' + day);
-    var url = 'mongodb://localhost:27017/meetings'
+    var url = 'mongodb://localhost:27017/meetings'  
     mongodb.connect(url, function(err, db) {
         var collection = db.collection('meeting');
         collection.find({

@@ -26,13 +26,38 @@ document.getElementById('meeting-form').addEventListener('click', function() {
     }
 
     var JSONdata = {};
-    JSONdata.title = document.querySelector('#meetingName').value;
+    JSONdata['title'] = document.querySelector('#meetingName').value;
     var checkboxes = document.querySelectorAll('.form-check-input');
-    JSONdata.day = getCheckedBoxes(checkboxes);
-    JSONdata.time = time;
-    JSONdata.period = perText;
-    console.log(JSONdata);
+    JSONdata['day'] = getCheckedBoxes(checkboxes);
+    JSONdata['time'] = time;
+    JSONdata['period'] = perText;
+    executeSearch(JSONdata)
 });
+
+function executeSearch(JSONdata) {
+    console.log(JSONdata);
+    var request = new XMLHttpRequest();
+    request.open('POST', 'MeetingSearch/executeSearch', true);
+
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            // Success!
+            console.log('Success!');
+            var el = document.querySelector("#meeting-search-results");
+            el.innerHTML = request.responseText;
+        } else {
+            // We reached our target server, but it returned an errorlog
+            console.log('We reached our target server, but it returned an error');
+        }
+    };
+
+    request.onerror = function() {
+        // There was a connection error of some sort
+        console.log('There was a connection error of some sort');
+    };
+    request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    request.send(JSON.stringify(JSONdata));
+}
 
 function getCheckedBoxes(checkboxes) {
     var checkboxesChecked = [];

@@ -51,7 +51,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Panel heading without title</div>
             <div class="panel-body">
-                <form method="POST" action="/MeetingSearch/search">
+                <form>
                     <!--  Meeting Name search box-->
                     <div class="form-group row">
                         <label for="meetingName" class="col-xs-2 col-sm-2 col-form-label">Meeting Name: </label>
@@ -104,19 +104,19 @@
                         <div class="col-md-3">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                <input class="form-check-input" name="day" type="checkbox" id="monday" value="monday">
+                                <input class="form-check-input" name="day" type="checkbox" id="monday" value="Monday">
                                 Monday
                               </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                <input class="form-check-input" name="day" type="checkbox" id="tuesday" value="tuesday">
+                                <input class="form-check-input" name="day" type="checkbox" id="tuesday" value="Tuesday">
                                 Tuesday
                               </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                <input class="form-check-input" name="day" type="checkbox" id="wednesday" value="wednesday">
+                                <input class="form-check-input" name="day" type="checkbox" id="wednesday" value="Wednesday">
                                 Wednesday
                             </label>
                             </div>
@@ -124,25 +124,25 @@
                         <div class="col-md-3">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                <input class="form-check-input" name="day" type="checkbox" id="thursday" value="thursday">
+                                <input class="form-check-input" name="day" type="checkbox" id="thursday" value="Thursday">
                                 Thursday
                               </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                <input class="form-check-input" name="day" type="checkbox" id="friday" value="friday">
+                                <input class="form-check-input" name="day" type="checkbox" id="friday" value="Friday">
                                 Friday
                               </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                <input class="form-check-input" name="day" type="checkbox" id="saturday" value="saturday">
+                                <input class="form-check-input" name="day" type="checkbox" id="saturday" value="Saturday">
                                 Saturday
                             </label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
-                                <input class="form-check-input" name="day" type="checkbox" id="sunday" value="sunday">
+                                <input class="form-check-input" name="day" type="checkbox" id="sunday" value="Sunday">
                                 Sunday
                             </label>
                             </div>
@@ -151,6 +151,10 @@
                     <button id="meeting-form" type="button" class="btn btn-secondary btn-md">Search</button>
                 </form>
             </div>
+        </div>
+        <div id="meeting-search-results" class="row">
+            <!--  Meeting Search Results -->
+            <% include meeting %>
         </div>
     </div>
     <!-- script references -->
