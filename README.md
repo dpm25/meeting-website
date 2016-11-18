@@ -10,6 +10,4 @@ This is my first attempt using node, and creating an all javascript website.
 ---------------------------------------
 STACK
 ---------------------------------------
-HTML5 / CSS3 / EJS - JavaScript Templates
-node js   --> v6.5.0
-mongodb   --> v3.2.10
+HTML5 / CSS3 / EJS - JavaScript Templates && node js   --> v6.5.0 && mongodb   --> v3.2.10
